@@ -11,14 +11,16 @@
   "license": "ISC",
   "babel": {
     "presets": [
-      "env",
-      "stage-2",
-      "react"
+      "@bebel/preset-env",
+      "@bebel/preset-react"
     ]
   },
   "devDependencies": {
     "@babel/core": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
+    "@babel/preset-react": "^7.0.0",
     "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-2": "^6.24.1",
