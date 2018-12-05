@@ -16,6 +16,7 @@ const Page3 = ({ onRouteChange }) => (
       >
         Learn React
       </a>
+      <p>PG3</p>
     </header>
     <button onClick={() => onRouteChange("page1")}>Page1</button>
     <button onClick={() => onRouteChange("page2")}>Page2</button>
