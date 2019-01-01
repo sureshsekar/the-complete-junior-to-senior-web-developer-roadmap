@@ -9,11 +9,11 @@ const initialStateSearch = {
   searchField: ""
 };
 
-const initialStateRobots = {
-  isPending: false,
-  robots: [],
-  error: ""
-};
+// const initialStateRobots = {
+//   isPending: false,
+//   robots: [],
+//   error: ""
+// };
 
 export const searchRobots = (state = initialStateSearch, action = {}) => {
   switch (action.type) {
@@ -24,6 +24,11 @@ export const searchRobots = (state = initialStateSearch, action = {}) => {
   }
 };
 
+const initialStateRobots = {
+  robots: [],
+  isPending: false
+}
+
 export const requestRobots = (state = initialStateRobots, action = {}) => {
   switch (action.type) {
     case REQUEST_ROBOTS_PENDING:
@@ -31,7 +36,7 @@ export const requestRobots = (state = initialStateRobots, action = {}) => {
     case REQUEST_ROBOTS_SUCCESS:
       return Object.assign({}, state, {
         robots: action.payload,
-        idPending: false
+        isPending: false
       });
     case REQUEST_ROBOTS_FAILED:
       return Object.assign({}, state, {
