@@ -6,30 +6,31 @@ import Scroll from "../components/Scroll";
 import "./MainPage.css";
 import ErrorBoundry from "../components/ErrorBoundry";
 
-
-
-
 class MainPage extends Component {
   componentDidMount() {
     this.props.onRequestRobots();
   }
 
-filterRobots = ( ) => {
-    return this.props.robots.filter(robot => {
-      return robot.name.toLowerCase().includes(this.props.searchField.toLowerCase());
-    });}
+  filterRobots = () => {
+    const { robots, searchField } = this.props;
+    return robots.filter(robot => {
+      return robot.name.toLowerCase().includes(searchField.toLowerCase());
+    });
+  };
   render() {
-    const {  onSearchChange, robots, isPending } = this.props;
+    const { onSearchChange, isPending } = this.props;
 
-    return !isPending ? (
-      <h1>Loading</h1>
-    ) : (
+    // !isPending ? (
+    //   <h1>Loading</h1>
+    // ) :
+
+    return (
       <div className="tc">
         <Header />
         <SearchBox searchChange={onSearchChange} />
         <Scroll>
           <ErrorBoundry>
-          <CardList robots={this.filterRobots()} />
+            <CardList robots={this.filterRobots()} />
           </ErrorBoundry>
         </Scroll>
       </div>
@@ -37,4 +38,4 @@ filterRobots = ( ) => {
   }
 }
 
-export default MainPage
+export default MainPage;
